@@ -13,6 +13,9 @@ function newItem() {
     list.append(li);
   }
 
+  // Extra code that I add to improve usability
+  inputValue = $('#input').val('');
+
    //2. Crossing out an item from the list of items:
    function crossOut() {
      li.toggleClass('strike');
@@ -24,7 +27,7 @@ function newItem() {
    let crossOutButton = $('<crossOutButton></crossOutButton>');
    crossOutButton.append(document.createTextNode('X'));
    li.append(crossOutButton);
-   
+
    crossOutButton.on('click', deleteListItem);
    //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
 
