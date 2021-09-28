@@ -1,4 +1,3 @@
-
 function newItem() {
   // jQuery
   //1. Adding a new item to the list of items:
@@ -13,26 +12,30 @@ function newItem() {
     list.append(li);
   }
 
-   //2. Crossing out an item from the list of items:
-   function crossOut() {
-     li.toggleClass('strike');
-   }
+  // Extra code that I add to improve usability
+  inputValue = $('#input').val('');
 
-   li.on('dbclick', crossOut);
 
-   //3(i). Adding the delete button "X":
-   let crossOutButton = $('<crossOutButton></crossOutButton>');
-   crossOutButton.append(document.createTextNode('X'));
-   li.append(crossOutButton);
-   
-   crossOutButton.on('click', deleteListItem);
-   //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
+  //2. Crossing out an item from the list of items:
+  function crossOut() {
+    li.toggleClass('strike');
+  }
 
-   function deleteListItem() {
-     li.addClass('delete');
-   }
+  li.on('dbclick', crossOut);
 
-   // 4. Reordering the items:
-   $('#list').sortable();
+  //3(i). Adding the delete button "X":
+  let crossOutButton = $('<crossOutButton></crossOutButton>');
+  crossOutButton.append(document.createTextNode('X'));
+  li.append(crossOutButton);
+
+  crossOutButton.on('click', deleteListItem);
+  //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
+
+  function deleteListItem() {
+    li.addClass('delete');
+  }
+
+  // 4. Reordering the items:
+  $('#list').sortable();
 
 }
